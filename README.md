@@ -1,52 +1,53 @@
 ﻿# Community Problem Solver
 
-A modern full-stack platform for citizens, volunteers, and administrators to report, discuss, track, and resolve local community issues.
+A modern full-stack platform that helps residents, volunteers, and local administrators report, discuss, track, and resolve community issues.
 
 ---
 
-## 🚀 Project Overview
+## Overview
 
-Community Problem Solver is designed to help neighborhoods and local governments collaborate on real-world issues such as streetlight outages, waste collection, road repairs, and volunteer coordination.
-It combines a React + Vite front end with an Express + MongoDB back end, delivering an experience that supports problem reporting, solution voting, discussion threads, notifications, volunteer management, and analytics.
+Community Problem Solver makes it easy for communities to collaborate on local problems (streetlights, waste management, road repairs, etc.). The project pairs a React + Vite frontend with an Express + MongoDB backend and includes features for reporting issues, proposing solutions, voting, discussions, notifications, and volunteer coordination.
 
-## ✨ Key Features
+## Key Features
 
-- **User registration & authentication** with JWT-based protected APIs.
-- **Problem submission** with descriptions, status tracking, and location details.
-- **Solution proposals** and **voting system** to promote the best community responses.
-- **Discussion threads** on each problem for collaboration and feedback.
-- **Volunteer applications** with region-specific dashboards.
-- **Admin dashboard** for user management, analytics, problem moderation, and approvals.
-- **Notifications** for user actions such as votes, discussions, and status updates.
-- **Image upload support** via Cloudinary.
-- **AI suggestions** endpoint for enhancing problem-solving workflows.
-- **Seed data script** to bootstrap demo users, volunteers, problems, solutions, and notifications.
+- User registration, login, and JWT-protected APIs
+- Problem reporting with location, description, and photo support
+- Solution proposals and an upvote system to surface helpful responses
+- Discussion threads and activity tracking per problem
+- Notifications for important user events
+- Admin and volunteer flows for moderation and coordination
 
-## 🧩 Tech Stack
+## Tech Stack
 
-- Frontend: `React`, `Vite`, `Tailwind CSS`, `Axios`, `React Router`
-- Backend: `Node.js`, `Express`, `MongoDB`, `Mongoose`
-- Authentication: `jsonwebtoken`, password hashing with `bcrypt`
-- File upload: `multer`, `cloudinary`
-- Notifications: `nodemailer`
+- Frontend: React, Vite, Tailwind CSS
+- Backend: Node.js, Express, MongoDB, Mongoose
+- Auth: JSON Web Tokens (JWT), bcrypt
+- File uploads: multer + Cloudinary
+- Email: nodemailer
 
-## 📂 Repository Structure
+## Repository Layout
 
 ```
-/ client/    # React front-end application
-/ server/    # Express back-end API server
+client/    # React front-end
+server/    # Express API server
 ```
 
-## ⚙️ Setup Instructions
+## Prerequisites
 
-### 1. Backend
+- Node.js 18+ and npm
+- A MongoDB connection (Atlas or self-hosted)
+- (Optional) Cloudinary account for image uploads
 
-```powershell
+## Installation
+
+1. Backend
+
+```bash
 cd server
 npm install
 ```
 
-Create a `.env` file in `server/` with the following variables:
+Create a `.env` in `server/` with these variables (example):
 
 ```env
 MONGODB_URL=your_mongodb_connection_string
@@ -56,66 +57,74 @@ API_KEY=your_cloudinary_api_key
 API_SECRET=your_cloudinary_api_secret
 SMTP_HOST=your_smtp_host
 SMTP_PORT=your_smtp_port
-SMTP_USER=your_smtp_username
-SMTP_PASS=your_smtp_password
-FROM_EMAIL=your_email_address
+SMTP_USER=your_smtp_user
+SMTP_PASS=your_smtp_pass
+FROM_EMAIL=your_from_email
 FRONTEND_URL=http://localhost:5173
-CORS_ORIGINS=http://localhost:5173,http://localhost:3000
+CORS_ORIGINS=http://localhost:5173
 PORT=3000
 ```
 
-Start the backend server:
+Start the server in development:
 
-```powershell
+```bash
 npm run dev
 ```
 
-### 2. Frontend
+2. Frontend
 
-```powershell
-cd client
+```bash
+cd ../client
 npm install
 npm run dev
 ```
 
-The app runs by default at `http://localhost:5173`.
+Visit `http://localhost:5173` to view the app.
 
-## 🧪 Seed Data & Demo Accounts
+## Seed Data (optional)
 
-A seed script is available to create mock users, volunteers, problems, solutions, discussions, and notifications.
+The repository contains a seed script to populate example problems, solutions, users, and notifications for local testing. Run it only in non-production environments after you set `MONGODB_URL`:
 
-```powershell
+```bash
 cd server
 node scripts/seedMockData.js
 ```
 
-### Example seeded accounts
+Note: For security and privacy, credentials and any sensitive defaults are intentionally not included in this README.
 
-- Admin: `mohan62131@gmail.com` / `mohan@62131`
-- Demo user: `charan.mock@cps.local` / `123456`
-- Volunteers: one account per state, e.g. `delhi.volunteer@cps.local` / `Delhi@123`
+## Contribution
 
-## 📌 Available Scripts
+Contributions are welcome. For this project, a good first step is improving documentation or making small UI/UX polish changes on the landing page. Typical workflow:
+
+```bash
+git checkout -b feature/your-change
+# make edits (README.md for docs changes)
+git add README.md
+git commit -m "docs: improve README"
+git push origin feature/your-change
+# Open a PR against the main repository
+```
+
+If you were invited as a collaborator on the group repo, push your branch to the group repo and open a PR; otherwise fork the repo and open a PR from your fork.
+
+## Available scripts
 
 ### Backend
 
-- `npm start` — run server normally
-- `npm run dev` — run server with `nodemon`
+- `npm run dev` — start server with nodemon
+- `npm start` — run server
 
-### Frontend
+### Frontend (client)
 
-- `npm run dev` — start Vite development server
+- `npm run dev` — start Vite dev server
 - `npm run build` — build production assets
 - `npm run preview` — preview built frontend
 
-## 💡 Notes
+## Notes
 
-- The backend API is mounted under `/api/*` and the app expects authenticated requests for most operations.
-- The seed script is a great way to verify the app flows without manually creating data.
-- Update `.env` values before running the application in a production environment.
+- Keep `.env` values out of version control.
+- Use the seed script only for local testing — do not run it against production databases.
 
 ---
 
-## 📞 Contact
-
-If you want to improve the README further, I can add screenshots, architecture diagrams, or a step-by-step demo flow next.
+If you'd like, I can add screenshots, example API calls, or an architecture diagram in a follow-up commit.
