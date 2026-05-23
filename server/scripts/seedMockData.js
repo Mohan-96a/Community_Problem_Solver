@@ -12,7 +12,7 @@ import Notification from "../models/Notification.js";
 
 dotenv.config();
 
-const primaryEmail = "suman.tati2005@gmail.com";
+const primaryEmail = "mohan62131@gmail.com";
 const volunteers = [
     { state: "Andhra Pradesh", email: "andhra.volunteer@cps.local", password: "Andhra@123" },
     { state: "Bihar", email: "bihar.volunteer@cps.local", password: "Bihar@123" },
