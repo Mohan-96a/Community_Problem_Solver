@@ -91,7 +91,7 @@ node scripts/seedMockData.js
 
 ### Example seeded accounts
 
-- Admin: `mohan62131@gmail.com` / `Suman@2005`
+- Admin: `mohan62131@gmail.com` / `mohan@62131`
 - Demo user: `charan.mock@cps.local` / `123456`
 - Volunteers: one account per state, e.g. `delhi.volunteer@cps.local` / `Delhi@123`
 

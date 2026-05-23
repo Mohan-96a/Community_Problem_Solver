@@ -30,7 +30,7 @@ const run = async () => {
     await mongoose.connect(process.env.MONGODB_URL);
 
     const hashedDefaultPassword = await bcrypt.hash("123456", 10);
-    const hashedAdminPassword = await bcrypt.hash("Suman@2005", 10);
+    const hashedAdminPassword = await bcrypt.hash("mohan@62131", 10);
 
     let primaryUser = await User.findOne({ email: primaryEmail });
     if (!primaryUser) {
@@ -185,7 +185,7 @@ const run = async () => {
         volunteerCount: await User.countDocuments({ role: "volunteer" }),
         totalDiscussions: await Discussion.countDocuments(),
         loginPasswordForSeededUsers: "123456",
-        superAdminPassword: "Suman@2005",
+        superAdminPassword: "mohan@62131",
         volunteerLogins: volunteers
     };
 
